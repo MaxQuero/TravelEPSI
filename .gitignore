@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+*.iml
+*.iws
+log/
+target/
+src/main/resources/public/scripts/vendor
