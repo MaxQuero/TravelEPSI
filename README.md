@@ -2,19 +2,6 @@
 
 ## hibernate.cfg.xml
 
-```
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-<hibernate-configuration>
-    <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/travelepsi</property>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">root</property>
-        <mapping class="travelepsi.Entities.UserEntity"/>
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
-    </session-factory>
-</hibernate-configuration>
-```
+Copy `hibernate.cfg.xml.sample` to `hibernate.cfg.xml` and custom it to your need:
+
+`cd src/main/resources/META-INF && cp hibernate.cfg.xml{.sample,} && cd -`
