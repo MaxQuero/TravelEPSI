@@ -1,3 +1,8 @@
+# TravelEPSI
+
+## hibernate.cfg.xml
+
+```
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD//EN"
@@ -12,3 +17,4 @@
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>
+```

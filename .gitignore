@@ -5,3 +5,4 @@
 log/
 target/
 src/main/resources/public/scripts/vendor
+src/main/resources/META-INF/hibernate.cfg.xml
