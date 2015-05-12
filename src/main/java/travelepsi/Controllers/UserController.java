@@ -47,6 +47,17 @@ public class UserController {
         return new ResponseEntity<UserEntity>(user, HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseEntity<?> loginUser(@RequestBody UserEntity user) {
+        UserEntity u = userService.getUserByLoginAndPassword(user.getLogin(), user.getPassword());
+
+        if (user == null) {
+            return new ResponseEntity<String>("", HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<UserEntity>(u, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateUser(@PathVariable Integer id, @RequestBody UserEntity user) {
         UserEntity base = userService.get(id);

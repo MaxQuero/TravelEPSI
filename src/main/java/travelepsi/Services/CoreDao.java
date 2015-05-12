@@ -36,6 +36,8 @@ public abstract class CoreDao<T> {
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
+            session.close();
+            session = HibernateUtil.getSessionFactory().openSession();
         }
 
         session.getTransaction().commit();
@@ -50,6 +52,8 @@ public abstract class CoreDao<T> {
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
+            session.close();
+            session = HibernateUtil.getSessionFactory().openSession();
         }
 
         session.getTransaction().commit();
@@ -64,6 +68,9 @@ public abstract class CoreDao<T> {
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
+            session.close();
+            session = HibernateUtil.getSessionFactory().openSession();
+
         }
 
         session.getTransaction().commit();

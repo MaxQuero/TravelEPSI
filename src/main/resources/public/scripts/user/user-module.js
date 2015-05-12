@@ -1,10 +1,16 @@
 angular.module('app.userModule', ['ui.router'])
   .config(['$stateProvider', function($stateProvider) {
     $stateProvider
+      .state('logout', {
+        url: '/logout',
+        controller: 'UserLogoutController'
+      })
+
       .state('users', {
         abstract: true,
         url: '/users',
-        template: '<div ui-view></div>'
+        template: '<div ui-view></div>',
+        protected: true
       })
 
       .state('users.index', {

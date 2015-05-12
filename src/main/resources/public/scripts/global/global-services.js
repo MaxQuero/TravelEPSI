@@ -36,7 +36,26 @@ angular.module('app.services', [])
 
             modelCp.password = md5.createHash(modelCp.password);
 
-            Restangular.all('login').post(modelCp).then(
+            Restangular.all('users/login').post(modelCp).then(
+              function(data) {
+                var user = data.plain();
+
+                localStorageService.set('user', user);
+                deferred.resolve(user);
+              },
+              function() {
+                deferred.reject();
+              }
+            );
+
+            return deferred.promise;
+          },
+          signup: function(model) {
+            var deferred      = $q.defer();
+            var modelCp       = angular.copy(model);
+            modelCp.password  = md5.createHash(modelCp.password);
+
+            Restangular.all('users').post(modelCp).then(
               function(data) {
                 var user = data.plain();
 

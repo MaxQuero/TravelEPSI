@@ -28,7 +28,7 @@ angular.module('app', [
       ) {
         $httpProvider.interceptors.push('errorHttpInterceptor');
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/dashboard');
 
         localStorageServiceProvider.setPrefix('travelepsi');
 
@@ -44,13 +44,15 @@ angular.module('app', [
       '$window',
       '$state',
       'toaster',
+      'AuthService',
 
       function(
         $log,
         $rootScope,
         $window,
         $state,
-        toaster
+        toaster,
+        AuthService
       ) {
         $rootScope.$on('not_created', function(e, data) {
           toaster.pop('warning', '', "Ca n'a pas été créé");
@@ -68,7 +70,28 @@ angular.module('app', [
           toaster.pop('error', '', 'Pas trouvé');
         });
 
-        $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+          var bodyClass = '', state, tmpState;
+
+          state = toState.name.split('.');
+
+          for (var i = 1; i <= state.length; i++) {
+            tmpState = state.slice(0, i).join('.');
+
+            if ($state.get(tmpState)) {
+              if ($state.get(tmpState).bodyClass) {
+                bodyClass += ' ' + $state.get(tmpState).bodyClass;
+              }
+
+              if ($state.get(tmpState).protected && !AuthService.isLoggedIn()) {
+                event.preventDefault();
+                $state.go('home');
+              }
+            }
+          }
+
+          $rootScope.bodyClass = bodyClass;
+
           $window.scrollTo(0, 0);
         });
       }

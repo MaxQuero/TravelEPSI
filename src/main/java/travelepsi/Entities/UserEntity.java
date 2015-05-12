@@ -1,5 +1,7 @@
 package travelepsi.Entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -86,6 +88,7 @@ public class UserEntity implements Serializable {
     }
 
     @Column(name = "telephone_number")
+    @JsonProperty("telephone_number")
     public String getTelephoneNumber() {
         return telephoneNumber;
     }
