@@ -1,0 +1,15 @@
+ckage travelepsi.Services;
+
+import org.springframework.stereotype.Service;
+import travelepsi.Entities.{{%CAPSMODEL%}}Entity;
+
+
+@Service
+public class {{%CAPSMODEL%}}Service extends CoreDao<{{%CAPSMODEL%}}Entity> {
+
+    public {{%CAPSMODEL%}}Service() {
+        super({{%CAPSMODEL%}}Entity.class);
+    }
+
+}
+

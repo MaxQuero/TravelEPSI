@@ -1,0 +1,44 @@
+package travelepsi.Entities;
+
+import javax.persistence.*;
+import static javax.persistence.GenerationType.IDENTITY;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+
+@Entity
+@Table(name = "{{%LOWMODELPLUR%}}", catalog = "TravelEPSI")
+public class {{%CAPSMODEL%}}Entity implements Serializable {
+
+    // private int id;
+
+    // @Id
+    // @GeneratedValue(strategy = IDENTITY)
+    // @Column(name = "id", unique = true, nullable = false)
+    // public int getId() {
+    //     return id;
+    // }
+
+    // public void setId(int id) {
+    //     this.id = id;
+    // }
+
+    public {{%CAPSMODEL%}}Entity merge({{%CAPSMODEL%}}Entity o) {
+        // if (o.login != null && !this.login.equals(o.login)) this.login = o.login;
+
+        return this;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        {{%CAPSMODEL%}}Entity that = ({{%CAPSMODEL%}}Entity) o;
+
+        // if (id != that.id) return false;
+
+        return true;
+    }
+
+}
