@@ -33,6 +33,7 @@ public class PeriodEntity implements Serializable {
     }
 
     @Column(name = "startDT")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="CET")
     public Date getStartDT() {
         return startDT;
     }
@@ -41,6 +42,7 @@ public class PeriodEntity implements Serializable {
     }
 
     @Column(name = "endDT")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="CET")
     public Date getEndDT() {
         return endDT;
     }
