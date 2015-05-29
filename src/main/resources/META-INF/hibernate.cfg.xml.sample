@@ -8,6 +8,10 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.username">root</property>
         <mapping class="travelepsi.Entities.UserEntity"/>
+        <mapping class="travelepsi.Entities.TownEntity"/>
+        <mapping class="travelepsi.Entities.PeriodEntity"/>
+        <mapping class="travelepsi.Entities.PackageEntity"/>
+        <mapping class="travelepsi.Entities.ServiceEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
