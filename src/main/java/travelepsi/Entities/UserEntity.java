@@ -1,5 +1,6 @@
 package travelepsi.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -88,7 +89,6 @@ public class UserEntity implements Serializable {
     }
 
     @Column(name = "phone")
-    @JsonProperty("phone")
     public String getPhone() {
         return phone;
     }

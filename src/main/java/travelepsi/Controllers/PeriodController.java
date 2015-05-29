@@ -38,7 +38,6 @@ public class PeriodController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addPeriod(@RequestBody PeriodEntity period) {
         try {
-
             period = periodService.save(period);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -46,6 +45,4 @@ public class PeriodController {
 
         return new ResponseEntity<PeriodEntity>(period, HttpStatus.CREATED);
     }
-
-
 }

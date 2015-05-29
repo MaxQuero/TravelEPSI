@@ -1,10 +1,15 @@
 package travelepsi.Entities;
 
 import javax.persistence.*;
+import javax.print.attribute.standard.MediaSize;
 import java.io.Serializable;
 import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Created by benjaminsenechal on 28/05/15.
@@ -31,7 +36,6 @@ public class PeriodEntity implements Serializable {
     public Date getStartDT() {
         return startDT;
     }
-
     public void setStartDT(Date startDT) {
         this.startDT = startDT;
     }
