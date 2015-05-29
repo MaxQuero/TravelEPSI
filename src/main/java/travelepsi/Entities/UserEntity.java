@@ -20,7 +20,7 @@ public class UserEntity implements Serializable {
     private String lastname;
     private Date birthday;
     private String mail;
-    private String telephoneNumber;
+    private String phone;
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -87,14 +87,14 @@ public class UserEntity implements Serializable {
         this.mail = mail;
     }
 
-    @Column(name = "telephone_number")
-    @JsonProperty("telephone_number")
-    public String getTelephoneNumber() {
-        return telephoneNumber;
+    @Column(name = "phone")
+    @JsonProperty("phone")
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephoneNumber(String telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
+    public void setPhone(String telephoneNumber) {
+        this.phone = telephoneNumber;
     }
 
     public UserEntity merge(UserEntity o) {
@@ -104,7 +104,7 @@ public class UserEntity implements Serializable {
         if (o.lastname != null && !this.lastname.equals(o.lastname)) this.lastname = o.lastname;
         if (o.birthday != null && !this.birthday.equals(o.birthday)) this.birthday = o.birthday;
         if (o.mail != null && !this.mail.equals(o.mail)) this.mail = o.mail;
-        if (o.telephoneNumber != null && !this.telephoneNumber.equals(o.telephoneNumber)) this.telephoneNumber = o.telephoneNumber;
+        if (o.phone != null && !this.phone.equals(o.phone)) this.phone = o.phone;
 
         return this;
     }
@@ -122,7 +122,7 @@ public class UserEntity implements Serializable {
         if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
         if (birthday != null ? !birthday.equals(that.birthday) : that.birthday != null) return false;
         if (mail != null ? !mail.equals(that.mail) : that.mail != null) return false;
-        if (telephoneNumber != null ? !telephoneNumber.equals(that.telephoneNumber) : that.telephoneNumber != null)
+        if (phone != null ? !phone.equals(that.phone) : that.phone != null)
             return false;
 
         return true;
