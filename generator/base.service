@@ -1,5 +1,6 @@
-ckage travelepsi.Services;
+package travelepsi.Services;
 
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
 import travelepsi.Entities.{{%CAPSMODEL%}}Entity;
 
