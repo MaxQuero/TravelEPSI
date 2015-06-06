@@ -4,9 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import travelepsi.Entities.PackageEntity;
-import travelepsi.Entities.PeriodEntity;
 import travelepsi.Services.PackageService;
-import travelepsi.Services.PeriodService;
 
 import java.util.List;
 
