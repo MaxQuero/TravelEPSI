@@ -1,9 +1,6 @@
 package travelepsi.Entities;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
@@ -35,5 +32,4 @@ public class PackageEntity implements Serializable {
     public void setWording(String wording) {
         this.wording = wording;
     }
-
 }
