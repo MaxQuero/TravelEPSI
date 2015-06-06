@@ -11,6 +11,12 @@
     </div>
 
     <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav" ng-if="isLoggedIn">
+        <li><a ui-sref="packages.index">Packages</a></li>
+        <li><a ui-sref="periods.index">Périodes</a></li>
+        <li><a ui-sref="services.index">Services</a></li>
+      </ul>
+
       <ul class="nav navbar-nav navbar-right" ng-if="isLoggedIn">
         <li><a ui-sref="logout">Se déconnecter</a></li>
       </ul>

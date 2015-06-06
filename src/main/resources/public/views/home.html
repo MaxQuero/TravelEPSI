@@ -4,12 +4,12 @@
       <form name="loginForm" ng-hide="signingUp" novalidate="novalidate">
         <div ng-class="{ 'has-error': loginForm.login.$dirty && loginForm.login.$invalid }" class="form-group">
           <label for="login" class="control-label">Login *</label>
-          <input id="login" name="login" ng-model="user.login" ng-required="true" type="text" class="form-control"/>
+          <input id="login" name="login" ng-model="user.login" ng-required="true" type="text" class="form-control">
         </div>
 
         <div ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$invalid }" class="form-group">
           <label for="password" class="control-label">Mot de passe *</label>
-          <input id="password" name="password" ng-model="user.password" ng-required="true" type="password" class="form-control"/>
+          <input id="password" name="password" ng-model="user.password" ng-required="true" type="password" class="form-control">
         </div>
 
         <div class="mtl">
@@ -20,41 +20,41 @@
       <form name="signupForm" ng-show="signingUp" novalidate="novalidate">
         <div ng-class="{ 'has-error': signupForm.login.$dirty && signupForm.login.$invalid }" class="form-group">
           <label for="login" class="control-label">Login *</label>
-          <input id="login" name="login" ng-model="user.login" ng-required="true" type="text" class="form-control"/>
+          <input id="login" name="login" ng-model="user.login" ng-required="true" type="text" class="form-control">
         </div>
 
         <div ng-class="{ 'has-error': signupForm.password.$dirty && signupForm.password.$invalid }" class="form-group">
           <label for="password" class="control-label">Mot de passe *</label>
-          <input id="password" name="password" ng-model="user.password" ng-required="true" type="password" class="form-control"/>
+          <input id="password" name="password" ng-model="user.password" ng-required="true" type="password" class="form-control">
         </div>
 
         <div ng-class="{ 'has-error': signupForm.mail.$dirty && signupForm.mail.$invalid }" class="form-group">
           <label for="mail" class="control-label">Email *</label>
-          <input id="mail" name="mail" ng-model="user.mail" ng-required="true" type="email" class="form-control"/>
+          <input id="mail" name="mail" ng-model="user.mail" ng-required="true" type="email" class="form-control">
         </div>
 
         <div ng-class="{ 'has-error': signupForm.birthday.$dirty && signupForm.birthday.$invalid }" class="form-group">
           <label for="birthday" class="control-label">Date de naissance *</label>
-          <input id="birthday" name="birthday" ng-model="user.birthday" ng-required="true" type="date" class="form-control"/>
+          <input id="birthday" name="birthday" ng-model="user.birthday" ng-required="true" type="date" class="form-control">
         </div>
 
         <div ng-class="{ 'has-error': signupForm.telephone_number.$dirty && signupForm.telephone_number.$invalid }" class="form-group">
           <label for="telephone_number" class="control-label">Numéro de téléphone *</label>
-          <input id="telephone_number" name="telephone_number" ng-model="user.telephone_number" ng-required="true" type="phone" class="form-control"/>
+          <input id="telephone_number" name="telephone_number" ng-model="user.telephone_number" ng-required="true" type="phone" class="form-control">
         </div>
 
         <div class="row">
           <div class="col-sm-6">
             <div ng-class="{ 'has-error': signupForm.firstname.$dirty && signupForm.firstname.$invalid }" class="form-group">
               <label for="firstname" class="control-label">Prénom *</label>
-              <input id="firstname" name="firstname" ng-model="user.firstname" ng-required="true" type="text" class="form-control"/>
+              <input id="firstname" name="firstname" ng-model="user.firstname" ng-required="true" type="text" class="form-control">
             </div>
           </div>
 
           <div class="col-sm-6">
             <div ng-class="{ 'has-error': signupForm.lastname.$dirty && signupForm.lastname.$invalid }" class="form-group">
               <label for="lastname" class="control-label">Nom *</label>
-              <input id="lastname" name="lastname" ng-model="user.lastname" ng-required="true" type="text" class="form-control"/>
+              <input id="lastname" name="lastname" ng-model="user.lastname" ng-required="true" type="text" class="form-control">
             </div>
           </div>
         </div>

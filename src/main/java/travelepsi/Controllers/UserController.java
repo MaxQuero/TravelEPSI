@@ -14,7 +14,7 @@ import travelepsi.Services.UserService;
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     public UserService userService = new UserService();

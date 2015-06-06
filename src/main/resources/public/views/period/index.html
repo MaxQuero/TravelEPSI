@@ -1,0 +1,12 @@
+<h2>Liste des périodes</h2>
+
+<ul>
+  <li ng-repeat="period in periods">
+    <p>De {{period.startDT | date}} <i class="glyphicon glyphicon-time"></i> à {{period.endDT | date}} <i class="glyphicon glyphicon-time"></i></p>
+  </li>
+</ul>
+
+<hr>
+
+<h2>Création d'une période</h2>
+<div ng-include="'/views/period/form.html'"></div>

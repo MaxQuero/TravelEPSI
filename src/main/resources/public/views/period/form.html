@@ -1,0 +1,20 @@
+<form name="periodForm" novalidate="novalidate">
+  <div class="row">
+    <div class="col-sm-6">
+      <p class="lead">Date de début</p>
+      <div ng-class="{ 'has-error': periodForm.startDT.$dirty && periodForm.startDT.$invalid }" class="form-group">
+        <datepicker class="well well-sm pull-left" ng-model="period.startDT" ng-required="true" show-weeks="true"></datepicker>
+      </div>
+    </div>
+
+    <div class="col-sm-6 text-right">
+      <p class="lead">Date de fin</p>
+      <div ng-class="{ 'has-error': periodForm.endDT.$dirty && periodForm.endDT.$invalid }" class="form-group">
+        <datepicker class="well well-sm pull-right" ng-model="period.endDT" ng-required="true" show-weeks="true"></datepicker>
+      </div>
+    </div>
+
+  </div>
+
+  <button ng-click="save(periodForm)" ng-disabled="periodForm.$invalid" class="btn btn-success">Valider</button>
+</div>

@@ -11,6 +11,9 @@ angular.module('app', [
   'app.directives',
   'app.services',
 
+  'app.packageModule',
+  'app.periodModule',
+  'app.serviceModule',
   'app.userModule'
 ])
   .config(
@@ -32,7 +35,7 @@ angular.module('app', [
 
         localStorageServiceProvider.setPrefix('travelepsi');
 
-        RestangularProvider.setBaseUrl('/');
+        RestangularProvider.setBaseUrl('/api');
       }
     ]
   )

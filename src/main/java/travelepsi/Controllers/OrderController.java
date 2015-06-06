@@ -16,7 +16,7 @@ import java.util.List;
  * Created by benjaminsenechal on 06/06/15.
  */
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 
 public class OrderController {
     public OrderService orderService = new OrderService();

@@ -9,7 +9,7 @@ import travelepsi.Services.TownService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/towns")
+@RequestMapping("/api/towns")
 public class TownController {
 
     public TownService townService = new TownService();

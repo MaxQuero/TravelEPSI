@@ -1,0 +1,12 @@
+<h2>Liste des packages</h2>
+
+<ul>
+  <li ng-repeat="package in packages">
+    <p>{{package.wording}}</p>
+  </li>
+</ul>
+
+<hr>
+
+<h2>Création d'un package</h2>
+<div ng-include="'/views/package/form.html'"></div>

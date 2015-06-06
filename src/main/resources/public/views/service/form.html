@@ -1,0 +1,8 @@
+<form name="serviceForm" novalidate="novalidate">
+  <div ng-class="{ 'has-error': serviceForm.startDT.$dirty && serviceForm.startDT.$invalid }" class="form-group">
+    <label for="wording" class="control-label">Nom *</label>
+    <input id="wording" name="wording" ng-model="service.wording" ng-required="true" type="text" class="form-control">
+  </div>
+
+  <button ng-click="save(serviceForm)" ng-disabled="serviceForm.$invalid" class="btn btn-success">Valider</button>
+</div>
