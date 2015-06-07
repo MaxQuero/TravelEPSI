@@ -35,7 +35,7 @@
 
         <div ng-class="{ 'has-error': signupForm.birthday.$dirty && signupForm.birthday.$invalid }" class="form-group">
           <label for="birthday" class="control-label">Date de naissance *</label>
-          <input id="birthday" name="birthday" ng-model="user.birthday" ng-required="true" type="date" class="form-control">
+          <datepicker id="birthday" class="well well-sm pull-left" ng-model="user.birthday" ng-required="true" show-weeks="true"></datepicker>
         </div>
 
         <div ng-class="{ 'has-error': signupForm.telephone_number.$dirty && signupForm.telephone_number.$invalid }" class="form-group">
