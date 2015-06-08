@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 content-central">
+      <img src="/images/flat-logo.png" width="100%">
       <form name="loginForm" ng-hide="signingUp" novalidate="novalidate">
         <div ng-class="{ 'has-error': loginForm.login.$dirty && loginForm.login.$invalid }" class="form-group">
           <label for="login" class="control-label">Login *</label>
@@ -13,7 +14,7 @@
         </div>
 
         <div class="mtl">
-          <button ng-click="login(loginForm)" ng-disabled="loginForm.$invalid" class="btn btn-success mrm mtl">Se connecter</button><span ng-click="signingUp = !signingUp" class="btn btn-primary mtl">S'inscrire ?</span>
+          <button ng-click="login(loginForm)" ng-disabled="loginForm.$invalid" class="btn btn-success mrm mtl">Se connecter</button><span ng-click="signingUp = !signingUp" class="btn btn-primary mtl pull-right">S'inscrire ?</span>
         </div>
       </form>
 

@@ -2,17 +2,21 @@
   <head>
     <meta charset="utf-8">
     <title>TravelEPSI</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="/scripts/vendor/AngularJS-Toaster/toaster.css">
-    <link rel="stylesheet" href="/scripts/vendor/bootstrap/dist/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui" type="text/css">
+    <link rel="stylesheet" href="/scripts/vendor/AngularJS-Toaster/toaster.css" type="text/css">
+    <link rel="stylesheet" href="/scripts/vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
 
-    <link rel="stylesheet" href="/styles/stylesheet.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type="text/css">
+    <link rel="stylesheet" href="/styles/shared/bootstrap-override.css" type="text/css">
+
+    <link rel="stylesheet" href="/styles/shared/main_css_classes/main.css" type="text/css">
+    <link rel="stylesheet" href="/styles/front/main.css" type="text/css">
   </head>
 
   <body ng-controller="AppController">
     <div ng-include="'/views/partials/nav.html'"></div>
 
-    <div class="container ui-view"></div>
+    <div class="container ui-view main-container"></div>
 
     <script src="/scripts/vendor/jquery/dist/jquery.js"></script>
     <script src="/scripts/vendor/lodash/dist/lodash.js"></script>

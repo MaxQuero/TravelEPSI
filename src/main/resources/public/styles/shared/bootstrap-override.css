@@ -1,0 +1,29 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-default {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+  display: block;
+  min-height: 60px;
+  width: 100%;
+  min-width: 180px;
+  background-color: #FFF;
+  border-radius: 0;
+  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+}
+
+.btn {
+  border-radius: 0;
+  padding: 10px 20px;
+}
+
+.btn.btn-success {
+  background-color: #DD6646;
+  border-color: #DD6646!important;
+}
