@@ -36,7 +36,7 @@ angular.module('app', [
 
         localStorageServiceProvider.setPrefix('travelepsi');
 
-        RestangularProvider.setBaseUrl('/api');
+        RestangularProvider.setBaseUrl('http://localhost:8080/api');
       }
     ]
   )

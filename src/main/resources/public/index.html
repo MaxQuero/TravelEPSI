@@ -1,61 +1,141 @@
-<html ng-app="app">
+<html>
   <head>
     <meta charset="utf-8">
-    <title>TravelEPSI</title>
+    <title>TravelEPSI API</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui" type="text/css">
-    <link rel="stylesheet" href="/scripts/vendor/AngularJS-Toaster/toaster.css" type="text/css">
-    <link rel="stylesheet" href="/scripts/vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
-
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type="text/css">
-    <link rel="stylesheet" href="/styles/shared/bootstrap-override.css" type="text/css">
-
-    <link rel="stylesheet" href="/styles/shared/main_css_classes/main.css" type="text/css">
-    <link rel="stylesheet" href="/styles/front/main.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css">
   </head>
 
-  <body ng-controller="AppController">
-    <div ng-include="'/views/partials/nav.html'"></div>
-
-    <div class="ui-view"></div>
-
-    <script src="/scripts/vendor/jquery/dist/jquery.js"></script>
-    <script src="/scripts/vendor/lodash/dist/lodash.js"></script>
-    <script src="/scripts/vendor/angular/angular.js"></script>
-    <script src="/scripts/vendor/angular-animate/angular-animate.js"></script>
-    <script src="/scripts/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="/scripts/vendor/angular-local-storage/dist/angular-local-storage.js"></script>
-    <script src="/scripts/vendor/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/scripts/vendor/restangular/dist/restangular.js"></script>
-    <script src="/scripts/vendor/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/scripts/vendor/angular-md5/angular-md5.js"></script>
-    <script src="/scripts/vendor/AngularJS-Toaster/toaster.js"></script>
-    <script src="/scripts/vendor/bootstrap/dist/js/bootstrap.js"></script>
-
-    <script src="/scripts/app.js"></script>
-    <script src="/scripts/app-controller.js"></script>
-
-    <script src="/scripts/global/global-module.js"></script>
-    <script src="/scripts/global/global-directives.js"></script>
-    <script src="/scripts/global/global-services.js"></script>
-
-    <script src="/scripts/order/order-module.js"></script>
-    <script src="/scripts/order/order-controllers.js"></script>
-    <script src="/scripts/order/order-data.js"></script>
-
-    <script src="/scripts/package/package-module.js"></script>
-    <script src="/scripts/package/package-controllers.js"></script>
-    <script src="/scripts/package/package-data.js"></script>
-
-    <script src="/scripts/period/period-module.js"></script>
-    <script src="/scripts/period/period-controllers.js"></script>
-    <script src="/scripts/period/period-data.js"></script>
-
-    <script src="/scripts/service/service-module.js"></script>
-    <script src="/scripts/service/service-controllers.js"></script>
-    <script src="/scripts/service/service-data.js"></script>
-
-    <script src="/scripts/user/user-module.js"></script>
-    <script src="/scripts/user/user-controllers.js"></script>
-    <script src="/scripts/user/user-data.js"></script>
+  <body>
+    <div class="container">
+        <div class="col-sm-12">
+            <h1>API routes</h1>
+            <table class="table table-bordered table-stripped">
+                <thead>
+                    <tr>
+                        <th>Route</th>
+                        <th>Method</th>
+                        <th>Controller</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+                    <tr>
+                        <td> /api/orders </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.OrderController.addOrder</td>
+                    </tr>
+                    <tr>
+                        <td> /api/orders </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.OrderController.getOrders</td>
+                    </tr>
+                    <tr>
+                        <td> /api/packages </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.PackageController.getPackage</td>
+                    </tr>
+                    <tr>
+                        <td> /api/packages/{id} </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.PackageController.getPackage</td>
+                    </tr>
+                    <tr>
+                        <td> /api/packages </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.PackageController.addPackage</td>
+                    </tr>
+                    <tr>
+                        <td> /api/packages/{id}/orders </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.PackageController.getOrders</td>
+                    </tr>
+                    <tr>
+                        <td> /api/periods </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.PeriodController.getPeriods</td>
+                    </tr>
+                    <tr>
+                        <td> /api/periods/{id} </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.PeriodController.getPeriod</td>
+                    </tr>
+                    <tr>
+                        <td> /api/periods </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.PeriodController.addPeriod</td>
+                    </tr>
+                    <tr>
+                        <td> /api/services/{id} </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.ServiceController.getPackage</td>
+                    </tr>
+                    <tr>
+                        <td> /api/services </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.ServiceController.getService</td>
+                    </tr>
+                    <tr>
+                        <td> /api/services </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.ServiceController.addPackage</td>
+                    </tr>
+                    <tr>
+                        <td> /api/towns </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.TownController.getTowns</td>
+                    </tr>
+                    <tr>
+                        <td> /api/towns/{id} </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.TownController.getTown</td>
+                    </tr>
+                    <tr>
+                        <td> /api/towns </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.TownController.addTown</td>
+                    </tr>
+                    <tr>
+                        <td> /api/towns/{id} </td>
+                        <td> PUT </td>
+                        <td> travelepsi.Controllers.TownController.updateTown</td>
+                    <tr>
+                        <td> /api/towns/{id} </td>
+                        <td> DELETE </td>
+                        <td> travelepsi.Controllers.TownController.deleteTown</td>
+                    </td>
+                    <tr>
+                        <td> /api/users </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.UserController.addUser</td>
+                    </tr>
+                    <tr>
+                        <td> /api/users </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.UserController.getUsers</td>
+                    </tr>
+                        <tr>
+                        <td> /api/users/{id} </td>
+                        <td> GET </td>
+                        <td> travelepsi.Controllers.UserController.getUser</td>
+                    </tr>
+                    <tr>
+                        <td> /api/users/login </td>
+                        <td> POST </td>
+                        <td> travelepsi.Controllers.UserController.loginUser</td>
+                    </tr>
+                    <tr>
+                        <td> /api/users/{id} </td>
+                        <td> PUT </td>
+                        <td> travelepsi.Controllers.UserController.updateUser</
+                    </td>
+                    <tr>
+                        <td> /api/users/{id} </td>
+                        <td> DELETE </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
   </body>
 </html>

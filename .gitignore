@@ -4,6 +4,6 @@
 *.iws
 log/
 target/
-src/main/resources/public/scripts/vendor
+front/scripts/vendor
 src/main/resources/META-INF/hibernate.cfg.xml
 out/
