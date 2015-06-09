@@ -11,6 +11,7 @@ angular.module('app', [
   'app.directives',
   'app.services',
 
+  'app.orderModule',
   'app.packageModule',
   'app.periodModule',
   'app.serviceModule',
