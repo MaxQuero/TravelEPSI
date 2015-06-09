@@ -5,10 +5,6 @@ import java.io.Serializable;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-/**
- * Created by benjaminsenechal on 06/06/15.
- */
-
 
 @Entity
 @Table(name = "orders", catalog = "TravelEPSI")
@@ -16,7 +12,6 @@ public class OrderEntity implements Serializable {
     private int id;
     private Integer package_id;
     private Integer service_id;
-    private Integer period_id;
     private PackageEntity pckage;
     private ServiceEntity service;
     private PeriodEntity period;
@@ -70,15 +65,6 @@ public class OrderEntity implements Serializable {
         this.package_id = package_id;
     }
 
-    @Column(name = "period_id", insertable=false, updatable=false)
-    public Integer getPeriod_id() {
-        return period_id;
-    }
-
-    public void setPeriod_id(Integer period_id) {
-        this.period_id = period_id;
-    }
-
     @Column(name = "service_id", insertable=false, updatable=false)
     public Integer getService_id() {
         return service_id;
@@ -88,7 +74,7 @@ public class OrderEntity implements Serializable {
         this.service_id = service_id;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "package_id")
     public PackageEntity getPckage() {
         return this.pckage;

@@ -3,14 +3,13 @@ package travelepsi.Controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import travelepsi.Entities.OrderEntity;
 import travelepsi.Entities.PackageEntity;
 import travelepsi.Services.PackageService;
 
+import javax.persistence.criteria.Order;
 import java.util.List;
 
-/**
- * Created by benjaminsenechal on 29/05/15.
- */
 
 @RestController
 @RequestMapping("/api/packages")
@@ -21,6 +20,12 @@ public class PackageController {
     public List<PackageEntity> getPackage() {
         List<PackageEntity> packages = packageService.getAll();
         return packages;
+    }
+
+    @RequestMapping(value = "/{id}/orders", method = RequestMethod.GET)
+    public ResponseEntity<?> getOrders(@PathVariable Integer id) {
+        List<OrderEntity> orders = packageService.getOrders(id);
+        return new ResponseEntity<List<OrderEntity>>(orders, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

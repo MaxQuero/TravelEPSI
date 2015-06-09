@@ -1,11 +1,8 @@
 package travelepsi.Entities;
 import javax.persistence.*;
 import java.io.Serializable;
-import static javax.persistence.GenerationType.IDENTITY;
 
-/**
- * Created by benjaminsenechal on 29/05/15.
- */
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "packages", catalog = "TravelEPSI")

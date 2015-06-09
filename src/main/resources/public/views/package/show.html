@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h1>
+    {{package.wording}}
+
+    <span ui-sref="packages.show.new-order" class="label label-success">
+      Nouvelle étape
+    </span>
+  </h1>
+</div>
+
+<div ui-view></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="order in orders">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>{{order.service.wording}}</h3>
+          <p>Du {{order.period.startDT | date}} <i class="glyphicon glyphicon-time"></i> au {{order.period.endDT | date}} <i class="glyphicon glyphicon-time"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

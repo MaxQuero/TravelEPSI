@@ -19,9 +19,7 @@ import travelepsi.Services.ServiceService;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-/**
- * Created by benjaminsenechal on 06/06/15.
- */
+
 @RestController
 @RequestMapping("/api/orders")
 
@@ -40,14 +38,11 @@ public class OrderController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addOrder(@RequestBody OrderEntity order) {
         try {
-            PackageEntity pck = packageService.getPackage(order.getPackage_id());
+            PackageEntity pck = packageService.get(order.getPackage_id());
             order.setPckage(pck);
 
             ServiceEntity service = serviceService.getService(order.getService_id());
             order.setService(service);
-
-            PeriodEntity period = periodService.getPeriod(order.getPeriod_id());
-            order.setPeriod(period);
 
             order = orderService.save(order);
         } catch (Exception e) {

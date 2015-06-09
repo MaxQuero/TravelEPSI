@@ -4,29 +4,46 @@ angular.module('app.packageModule')
     [
       '$log',
       '$scope',
-      'packages',
+      '$state',
       'packageData',
 
       function(
         $log,
         $scope,
-        packages,
+        $state,
         packageData
       ) {
-        $scope.packages  = packages;
-        $scope.package   = {};
+        $scope.package = {};
 
         $scope.save = function(form) {
           if (form.$valid) {
             packageData.saveOne($scope.package).then(
               function(data) {
-                $scope.packages.push(data);
-                $scope.package = {};
-                form.$setPristine();
+                $state.go('packages.show', { id: data.id });
               }
             );
           }
         };
+      }
+    ]
+  )
+
+  .controller(
+    'PackageShowController',
+    [
+      '$log',
+      '$scope',
+      'orders',
+      'package',
+
+      function(
+        $log,
+        $scope,
+        orders,
+        package
+      ) {
+        $scope.orders   = orders;
+        $scope.package  = package;
       }
     ]
   );

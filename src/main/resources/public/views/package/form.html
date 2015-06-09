@@ -1,6 +1,6 @@
 <form name="packageForm" novalidate="novalidate">
-  <div ng-class="{ 'has-error': packageForm.startDT.$dirty && packageForm.startDT.$invalid }" class="form-group">
-    <label for="wording" class="control-label">Nom *</label>
+  <div ng-class="{ 'has-error': packageForm.wording.$dirty && packageForm.wording.$invalid }" class="form-group">
+    <label for="wording" class="control-label">Nom de mon voyage *</label>
     <input id="wording" name="wording" ng-model="package.wording" ng-required="true" type="text" class="form-control">
   </div>
 
