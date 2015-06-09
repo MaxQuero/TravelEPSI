@@ -1,12 +1,14 @@
-<h2>Liste des services</h2>
+<div class="container content-central">
+  <h2>Liste des services</h2>
 
-<ul>
-  <li ng-repeat="service in services">
-    <p>{{service.wording}}</p>
-  </li>
-</ul>
+  <ul>
+    <li ng-repeat="service in services">
+      <p>{{service.wording}}</p>
+    </li>
+  </ul>
 
-<hr>
+  <hr>
 
-<h2>Création d'un service</h2>
-<div ng-include="'/views/service/form.html'"></div>
+  <h2>Création d'un service</h2>
+  <div ng-include="'/views/service/form.html'"></div>
+</div>

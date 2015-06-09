@@ -1,20 +1,32 @@
-<ul>
-  <li ng-repeat="service in services">
-    <span ng-class="{ 'selected': order.service_id == service.id }" ng-click="order.service_id = service.id">{{service.wording}}</span>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>
+      Choissisez votre prestation
+    </h2>
+  </div>
+  <div class="col-xs-6 col-md-3" ng-repeat="service in services">
+    <span href="" class="thumbnail" ng-class="{ 'selected': order.service_id == service.id }" ng-click="order.service_id = service.id">
+      {{service.wording}}
+    </span>
+  </div>
+</div>
 
 <div class="row">
+  <div class="col-sm-12">
+    <h2>
+      Choissisez les dates
+    </h2>
+  </div>
   <div class="col-sm-6">
     <p class="lead">Date de début</p>
     <datepicker class="well well-sm pull-left" ng-model="order.period.startDT" ng-required="true" show-weeks="true"></datepicker>
   </div>
 
-  <div class="col-sm-6 text-right">
+  <div class="col-sm-6">
     <p class="lead">Date de fin</p>
     <datepicker class="well well-sm pull-right" ng-model="order.period.endDT" ng-required="true" show-weeks="true"></datepicker>
   </div>
 
 </div>
 
-<button ng-click="save(periodForm)" ng-disabled="periodForm.$invalid" class="btn btn-success">Valider</button>
+<button ng-click="save(periodForm)" ng-disabled="periodForm.$invalid" class="btn btn-success">Réserver !</button>

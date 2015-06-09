@@ -1,24 +1,34 @@
-<div class="text-center">
-  <h1>
-    {{package.wording}}
+<div class="container-fluid main-container">
+  <div class="content-central col-sm-12">
+    <div class="text-center">
+      <h1>
+        {{package.wording}}
 
-    <span ui-sref="packages.show.new-order" class="label label-success">
-      Nouvelle étape
-    </span>
-  </h1>
-</div>
+        <br/>
+        <span ui-sref="packages.show.new-order" class="btn btn-success mtxl">
+          Nouvelle étape
+        </span>
+      </h1>
+    </div>
 
-<div ui-view></div>
+    <div ui-view class="col-sm-8 services-container"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="order in orders">
-      <div class="thumbnail">
-        <div class="caption">
-          <h3>{{order.service.wording}}</h3>
-          <p>Du {{order.period.startDT | date}} <i class="glyphicon glyphicon-time"></i> au {{order.period.endDT | date}} <i class="glyphicon glyphicon-time"></i></p>
-        </div>
-      </div>
+    <div class="timeline-container col-sm-4">
+      <section id="cd-timeline" class="cd-container" ng-if="orders.length == 0">
+        Votre voyage est vide
+      </section>
+      <section id="cd-timeline" class="cd-container" ng-if="orders.length">
+        <div class="cd-timeline-block" ng-repeat="order in orders">
+          <div class="cd-timeline-img cd-location">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+          </div> <!-- cd-timeline-img -->
+
+          <div class="cd-timeline-content">
+            <h2>{{order.service.wording}}</h2>
+            <span class="cd-date">Du {{order.period.startDT | date}} au {{order.period.endDT | date}}</span>
+          </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+      </section> <!-- cd-timeline -->
     </div>
   </div>
 </div>

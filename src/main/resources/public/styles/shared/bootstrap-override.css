@@ -27,3 +27,15 @@ body {
   background-color: #DD6646;
   border-color: #DD6646!important;
 }
+
+.thumbnail {
+  border: 0;
+  box-shadow: 0 3px 0 #d7e4ed;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.thumbnail.selected {
+  box-shadow: 0 1px 0 #d7e4ed;
+  box-shadow: none;
+}
