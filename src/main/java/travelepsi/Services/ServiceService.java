@@ -1,5 +1,6 @@
 package travelepsi.Services;
 
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
 import travelepsi.Entities.ServiceEntity;
 
@@ -13,5 +14,8 @@ public class ServiceService extends CoreDao<ServiceEntity>{
         super(ServiceEntity.class);
     }
 
+    public ServiceEntity getService(Integer idService){
+        return (ServiceEntity)session.createCriteria(ServiceEntity.class).add(Restrictions.eq("id", idService)).uniqueResult();
+    }
 }
 

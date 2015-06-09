@@ -14,6 +14,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table(name = "orders", catalog = "TravelEPSI")
 public class OrderEntity implements Serializable {
     private int id;
+    private Integer package_id;
+    private Integer service_id;
+    private Integer period_id;
     private PackageEntity pckage;
     private ServiceEntity service;
     private PeriodEntity period;
@@ -57,6 +60,32 @@ public class OrderEntity implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Column(name = "package_id", insertable=false, updatable=false)
+    public Integer getPackage_id() {
+        return package_id;
+    }
+    public void setPackage_id(Integer package_id) {
+        this.package_id = package_id;
+    }
+
+    @Column(name = "period_id", insertable=false, updatable=false)
+    public Integer getPeriod_id() {
+        return period_id;
+    }
+
+    public void setPeriod_id(Integer period_id) {
+        this.period_id = period_id;
+    }
+
+    @Column(name = "service_id", insertable=false, updatable=false)
+    public Integer getService_id() {
+        return service_id;
+    }
+
+    public void setService_id(Integer service_id) {
+        this.service_id = service_id;
     }
 
     @OneToOne(cascade = CascadeType.ALL, optional = true)

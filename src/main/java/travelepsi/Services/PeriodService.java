@@ -15,4 +15,7 @@ public class PeriodService extends CoreDao<PeriodEntity>{
         super(PeriodEntity.class);
     }
 
+    public PeriodEntity getPeriod(Integer idPeriod){
+        return (PeriodEntity)session.createCriteria(PeriodEntity.class).add(Restrictions.eq("id", idPeriod)).uniqueResult();
+    }
 }
