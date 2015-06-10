@@ -1,4 +1,12 @@
-# TravelEPSI
+# TravelEPSI setup
+
+Install `npm install -g http-server`
+
+`cd front && http-server`
+
+Don't forget to change api path in `front/scripts/app.js`
+
+Hook assets up with: `bower install`
 
 ## hibernate.cfg.xml
 
@@ -9,7 +17,3 @@ Copy `hibernate.cfg.xml.sample` to `hibernate.cfg.xml` and custom it to your nee
 ## Database
 
 `mysql < database.sql` in terminal.
-
-## Launch front office
-
-`cd front` and `python -m SimpleHTTPServer` then go to `localhost:8000`

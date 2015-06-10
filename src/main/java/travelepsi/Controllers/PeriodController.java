@@ -12,7 +12,7 @@ import java.util.List;
  * Created by benjaminsenechal on 28/05/15.
  */
 @RestController
-@RequestMapping("/api/periods")
+@RequestMapping("/periods")
 public class PeriodController {
     public PeriodService periodService = new PeriodService();
 

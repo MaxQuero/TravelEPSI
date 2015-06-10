@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/packages")
+@RequestMapping("/packages")
 public class PackageController {
     public PackageService packageService = new PackageService();
 

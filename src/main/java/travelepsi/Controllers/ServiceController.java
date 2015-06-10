@@ -8,11 +8,9 @@ import travelepsi.Services.ServiceService;
 
 import java.util.List;
 
-/**
- * Created by benjaminsenechal on 29/05/15.
- */
+
 @RestController
-@RequestMapping("/api/services")
+@RequestMapping("/services")
 
 public class ServiceController {
     public ServiceService serviceService = new ServiceService();
