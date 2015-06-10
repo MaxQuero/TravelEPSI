@@ -5,16 +5,21 @@
         {{package.wording}}
 
         <br/>
-        <span ui-sref="packages.show.new-order" class="btn btn-success mtxl">
+
+        <span ui-sref="packages.show.new-order" ui-sref-opts="{ reload: true }" ng-show="!newOrder" class="btn btn-success mtxl">
           Nouvelle étape
+        </span>
+
+        <span ui-sref="packages.show" ui-sref-opts="{ reload: true }" ng-show="newOrder" class="btn btn-success mtxl">
+          Vue globale
         </span>
       </h1>
     </div>
 
-    <div ui-view class="col-sm-8 services-container"></div>
+    <div ui-view></div>
 
-    <div class="timeline-container col-sm-4">
-      <section id="cd-timeline" class="cd-container" ng-if="orders.length == 0">
+    <div class="timeline-container" ng-class="{ 'col-sm-4': newOrder, 'col-sm-12': !newOrder }">
+      <section id="cd-timeline" class="cd-container" ng-if="!orders.length">
         Votre voyage est vide
       </section>
       <section id="cd-timeline" class="cd-container" ng-if="orders.length">

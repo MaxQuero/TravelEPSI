@@ -3,16 +3,20 @@ angular.module('app.orderModule')
     'OrderNewController',
     [
       '$log',
+      '$rootScope',
       '$scope',
       'services',
       'orderData',
 
       function(
         $log,
+        $rootScope,
         $scope,
         services,
         orderData
       ) {
+        $rootScope.newOrder = true;
+
         $scope.services = services;
         $scope.order    = {
           package_id: $scope.package.id,

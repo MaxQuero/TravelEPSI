@@ -32,16 +32,20 @@ angular.module('app.packageModule')
     'PackageShowController',
     [
       '$log',
+      '$rootScope',
       '$scope',
       'orders',
       'package',
 
       function(
         $log,
+        $rootScope,
         $scope,
         orders,
         package
       ) {
+        $rootScope.newOrder = false;
+
         $scope.orders   = orders;
         $scope.package  = package;
       }

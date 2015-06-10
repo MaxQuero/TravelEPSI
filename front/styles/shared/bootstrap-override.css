@@ -29,7 +29,6 @@ body {
 }
 
 .thumbnail {
-  border: 0;
   box-shadow: 0 3px 0 #d7e4ed;
   padding: 20px 10px;
   text-align: center;
