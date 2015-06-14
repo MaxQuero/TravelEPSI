@@ -21,59 +21,71 @@ public abstract class CoreDao<T> {
     }
 
     public List<T> getAll() {
-        return createCriteria().list();
-    }
-
-    public T get(Integer id) {
-        return (T) session.get(entityClass, id);
-    }
-
-    public T save(T obj) {
-        session.beginTransaction();
-
         try {
-            session.save(obj);
+            session.beginTransaction();
+            List<T> req = createCriteria().list();
+            session.getTransaction().commit();
+
+            return req;
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
-            session.close();
-            session = HibernateUtil.getSessionFactory().openSession();
+
+            return null;
+        }
+    }
+
+    public T get(Integer id) {
+        try {
+            session.beginTransaction();
+            T req = (T) session.get(entityClass, id);
+            session.getTransaction().commit();
+
+            return req;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+
+            return null;
+        }
+    }
+
+    public T save(T obj) {
+        try {
+            session.beginTransaction();
+            session.save(obj);
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
         }
 
-        session.getTransaction().commit();
         return (T) obj;
     }
 
     public T update(T obj) {
-        session.beginTransaction();
-
         try {
+            session.beginTransaction();
             session.update(obj);
+            session.getTransaction().commit();
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
-            session.close();
-            session = HibernateUtil.getSessionFactory().openSession();
         }
 
-        session.getTransaction().commit();
         return (T) obj;
     }
 
     public T delete(T obj) {
-        session.beginTransaction();
-
         try {
+            session.beginTransaction();
             session.delete(obj);
+            session.getTransaction().commit();
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
-            session.close();
-            session = HibernateUtil.getSessionFactory().openSession();
-
         }
 
-        session.getTransaction().commit();
         return (T) obj;
     }
 

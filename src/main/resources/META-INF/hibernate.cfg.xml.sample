@@ -7,6 +7,8 @@
         <property name="connection.url">jdbc:mysql://localhost:3306/TravelEPSI</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.username">root</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <mapping class="travelepsi.Entities.UserEntity"/>
         <mapping class="travelepsi.Entities.TownEntity"/>
         <mapping class="travelepsi.Entities.PeriodEntity"/>
